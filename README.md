@@ -820,7 +820,7 @@ Go to the website and create a blank workspace.
 
 Next, create a folder and under that folder, create two files with the following contents:
 
-![files](.github/images/files.png)
+![new folder](.github/images/newfolder.png)
 
 ### NativeMinterInterface.sol
 
@@ -885,6 +885,9 @@ contract Game {
     }
 }
 ```
+
+When you're done, it should look like this:
+![files](.github/images/files.png)
 
 ### Compiling and deploying
 
