@@ -371,7 +371,7 @@ This value is set to `2` in C-Chain.
 
 #### `minBaseFee`
 
-The minimum base fee that can be used by a transaction. It also shows how much gas will it cost to do native token transfers. The value is in wei and set to `25000000000` in C-Chain. It corresponds to 0.25 nAvax (gwei). You can use [Snowtrace unitconverter](https://snowtrace.io/unitconverter) to convert between units.
+The minimum base fee that can be used by a transaction. It also shows how much gas will it cost to do native token transfers. The value is in wei and set to `25000000000` in C-Chain. It corresponds to 25 nAvax (gwei). You can use [Snowtrace unitconverter](https://snowtrace.io/unitconverter) to convert between units.
 
 #### `targetGas`
 
