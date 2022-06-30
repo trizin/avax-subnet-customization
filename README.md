@@ -227,6 +227,9 @@ This is the most fun part. We will deploy the subnet that we just created, and i
 $ avalanche subnet deploy testSubnet
 
 > ? Choose a network to deploy on:
+  ▸ Local Network
+    Fuji
+    Mainnet
 ```
 
 We will deploy the subnet on a local network so choose `Local Network` here.
