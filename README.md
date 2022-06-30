@@ -960,6 +960,8 @@ This is the end of the tutorial. I hope you've enjoyed it as much as I've enjoye
 
 You now have the ability to create your own subnet and customize it to your needs. Go play with the parameters, try something new, and enjoy!
 
+Please feel free to create an issue if you have any questions!
+
 Thanks for reading :heart:
 
 ## Resources
