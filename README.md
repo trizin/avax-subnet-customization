@@ -221,11 +221,10 @@ However, we are not gonna do any of these yet. Choose `No` and proceed.
 > Successfully created genesis
 ```
 
-You just created a subnet! 👏🎉
-
+Congrats! You just created a subnet! 👏🎉
 ## Deploying the subnet
 
-This is the most fun part. We will deploy the subnet that we just created, and it's so easy, thanks to Avalanche CLI!
+This is the most fun part. We will deploy the subnet that we just created, and it's so easy to do, thanks to Avalanche CLI!
 
 ```bash
 $ avalanche subnet deploy testSubnet
@@ -270,7 +269,7 @@ Before starting, I'd like to acknowledge that this section is very similar to [A
 
 Subnet wizard is an awesome tool to customize your subnet and might be a good starting point for you.
 
-We have mentioned the [genesis file](#genesis-file) above. The wizard generates this file for you but you can also create **your own genesis file!** This will allow you to customize the network even more. This is important because the wizard only allows you to choose a subset of the parameters.
+We have mentioned the [genesis file](#genesis-file) above. The wizard generates this file for you but you can also create **your own genesis file!** This will allow you to customize the network more easily and in depth.
 
 Let's take a look at the genesis file of our subnet which the wizard created for us.
 
@@ -372,9 +371,7 @@ Total gas limit for all transactions in the block. This is set to `8,000,000` in
 
 #### `targetBlockRate`
 
-The network aims to produce a new block in `targetBlockRate` seconds. This value is in **seconds**. If the network starts producing faster than this, [base fees are increased accordingly](#blockgascoststep). Otherwise, if the network starts producing slower than this, [base fees are decreased accordingly](#blockgascoststep).
-
-This value is set to `2` in C-Chain.
+The network aims to produce a new block in `targetBlockRate` seconds. This value is in **seconds**. If the network starts producing faster than this, [base fees are increased accordingly](#blockgascoststep). Otherwise, if the network starts producing slower than this, [base fees are decreased accordingly](#blockgascoststep). This value is set to `2` in C-Chain.
 
 #### `minBaseFee`
 
@@ -414,7 +411,7 @@ Maximum gas cost a block should cover. This value is set to `1,000,000` in C-Cha
 
 #### `blockGasCostStep`
 
-This value determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a slower rate, the block gas cost will decrease. If the parent block is produced at a faster rate, the block gas cost will increase. The amount of change is determined by the following formula:
+This value determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a **slower** rate, the block gas cost will **decrease**. If the parent block is produced at a **faster** rate, the block gas cost will **increase**. The amount of change is determined by the following formula:
 
 ```
 (blockGasCostStep) * (targetBlockRate - parent block production time)
@@ -459,7 +456,8 @@ Admin addresses can deploy new contracts and add new Admin and Deployer addresse
 
 #### `contractNativeMinterConfig`
 
-This configuration lets you use a smart contract to mint native tokens in your subnet. This is useful if you want to use your own token minting system.
+This configuration lets you use a smart contract to mint native tokens in your subnet. This is useful if you want to use your own token minting system.  
+
 If you'd like to use a smart contract to mint native tokens, you can set the `contractNativeMinterConfig` to a JSON object with the following properties:
 
 ```json
@@ -473,7 +471,7 @@ Admin addresses can add new Admin and Minter addresses. Precompiled contract is 
 
 #### `txAllowListConfig`
 
-This configures allows you to specify which addresses are authorized to make transactions. This is especially useful if you're building a private network.
+This configures allows you to specify which addresses are authorized to make transactions. It's especially useful if you're building a private network.
 If you'd like to restrict the transaction sender to a specific list of addresses, you can set the `txAllowListConfig` to a JSON object with the following properties:
 
 ```json
@@ -935,7 +933,7 @@ Now the `Game.sol` contract is a minter and can mint native tokens!
 ## Play the game!
 
 In the deploy tab: 
-- Set the value to 100 Ether. (or any other amount you want to play with)
+- Set the value to 100 Ether or any other amount you want to play with.
 - Find `Game` contract under deployed contracts section in remix.
 - Call `play` function.
 - Confirm the transaction with your metamask wallet.
