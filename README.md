@@ -889,6 +889,7 @@ contract Game {
 ```
 
 When you're done, it should look like this:
+
 ![files](.github/images/files.png)
 
 ### Compiling and deploying
