@@ -126,13 +126,17 @@ We're ready to deploy our first subnet.
 
 ## What is a subnet?
 
-> A subnet, or subnetwork, is a dynamic set of validators working together to achieve consensus on the state of a set of blockchains. Each blockchain is validated by exactly one subnet. A subnet can validate many blockchains. A node may be a member of many subnets.
+> A subnet, or subnetwork, is a dynamic subset of Avalanche Primary Network validators working together to achieve consensus on the state of one or more blockchains. Each blockchain is validated by exactly one subnet. A subnet can have and validate many blockchains. A validator may be a member of many subnets. 
+> 
+> Subnets are independent and don’t share execution thread, storage or networking with other subnets or the Primary Network, effectively allowing the network to scale up easily. They share the benefits provided by the Avalanche Protocol such as low cost and fast to finality.
+> 
+> A subnet manages its own membership, and it may require that its constituent validators have certain properties. This is very useful, and we explore its ramifications in more depth below:
 
 [Here is a great introduction to subnets by Avalanche](https://docs.avax.network/subnets)
 
 ### Subnets
 
-Subnets are a great technology but it's developing and complicated. There are almost no tools for deploying subnets and it's difficult to understand how to do it.
+Subnets is a great technology! It's still advancing and a bit complicated. There is almost no tooling for subnets and it's a bit difficult to work with them.
 
 Avalanche has changed that! The Avalanche team has developed an amazing tool to make this process a breeze.
 Now you can deploy your own production-ready subnet with just a few commands. The tool will guide you through configuring your subnet and deploying it!
