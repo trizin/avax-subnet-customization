@@ -367,7 +367,7 @@ When there is a new protocol release, to activate that protocol on your subnet, 
 
 #### `gasLimit`
 
-Total gas limit for all transactions in the block. Keep in mind that this impacts how much computation happens in one block. This is set to `8,000,000` in C-Chain. Also, the value represents the maximum amount of gas a single transaction can use. 
+The total amount of gas that can be used in a single block. Keep in mind that this impacts how much computation happens in one block. This is set to `8,000,000` in C-Chain. Also, the value represents the maximum amount of gas a single transaction can use. 
 
 #### `targetBlockRate`
 
@@ -496,7 +496,7 @@ The timestamp of the creation of the genesis block.
 Optional extra data that can be included in the genesis block. This is commonly set to `0x`.
 
 #### `gasLimit`
-The block gas limit. It should be set to the same value as in [the fee config](#fee-config). The value `0x7a1200` is hexadecimal and it's equal to `8,000,000`.
+The total amount of gas that can be used in a single block. It should be set to the same value as in [the fee config](#fee-config). The value `0x7a1200` is hexadecimal and it's equal to `8,000,000`.
 
 #### `difficulty`
 The difficulty level applied during the nonce discovering of this block. It is usually set to `0x0` for the genesis block.
