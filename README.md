@@ -345,7 +345,7 @@ Yes, the genesis file is in json format. The output should look like:
 }
 ```
 
-Pretty scary, right? But it's not that bad. The genesis file is a json file that contains the configuration of the subnet and the block header of the genesis block, which is the first block in the network.
+Pretty scary, right? But it's not that bad as it seems. The genesis file is a json file that contains the configuration of the subnet and the block header of the genesis block, which is the first block in the network.
 
 Let's dive into the genesis file a little bit more.
 
@@ -367,7 +367,7 @@ When there is a new protocol release, to activate that protocol on your subnet, 
 
 #### `gasLimit`
 
-Total gas limit for all transactions in the block. This is set to `8,000,000` in C-Chain. This value also represents the maximum amount of gas a single transaction can use. Keep in mind that the gas limit impacts how much computation happens in one block.
+Total gas limit for all transactions in the block. Keep in mind that this impacts how much computation happens in one block. This is set to `8,000,000` in C-Chain. Also, the value represents the maximum amount of gas a single transaction can use. 
 
 #### `targetBlockRate`
 
@@ -379,7 +379,7 @@ The minimum base fee that can be used by a transaction. It also shows how much g
 
 #### `targetGas`
 
-This value specifies the targeted amount of gas (including block gas cost) to consume within a rolling 10s window.
+Specifies the targeted amount of gas (including block gas cost) to consume within a rolling 10s window.
 
 #### `baseFeeChangeDenominator`
 
@@ -411,7 +411,7 @@ Maximum gas cost a block should cover. This value is set to `1,000,000` in C-Cha
 
 #### `blockGasCostStep`
 
-This value determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a **slower** rate, the block gas cost will **decrease**. If the parent block is produced at a **faster** rate, the block gas cost will **increase**. The amount of change is determined by the following formula:
+Determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a **slower** rate, the block gas cost will **decrease**. If the parent block is produced at a **faster** rate, the block gas cost will **increase**. The amount of change is determined by the following formula:
 
 ```
 (blockGasCostStep) * (targetBlockRate - parent block production time)
@@ -499,13 +499,13 @@ Optional extra data that can be included in the genesis block. This is commonly 
 This is the block gas limit. It should be set to the same value as in [the fee config](#fee-config). The value `0x7a1200` is hexadecimal and it's equal to `8,000,000`.
 
 #### `difficulty`
-This value is the difficulty level applied during the nonce discovering of this block. It is usually set to `0x0` for the genesis block.
+The difficulty level applied during the nonce discovering of this block. It is usually set to `0x0` for the genesis block.
 
 #### `mixHash`
-You can set this to `0x0000000000000000000000000000000000000000000000000000000000000000`.
-
 [Quotation from Explanation of genesis file](#resources)  
 > The combination of nonce and `mixHash` must satisfy a mathematical condition described in the Yellowpaper, 4.3.4. Block Header Validity, (44). It allows to verify that the Block has really been cryptographically mined, thus, from this aspect, is valid. 
+
+This isn't so important for the genesis block. You can set it to `0x0000000000000000000000000000000000000000000000000000000000000000`.
 
 #### `coinbase`
 This is the address of the miner who mined the genesis block. It is usually set to `0x0000000000000000000000000000000000000000` for the genesis block.
@@ -520,7 +520,7 @@ This is the amount of gas used by the genesis block. It is usually set to `0x0`.
 This is the number of the genesis block. It is usually set to `0x0`.
 
 #### `airdropHash` `baseFeePerGas` `airdropAmount`
-You can remove or leave these fields as they are. I'm not sure what they do.
+You can remove or leave these fields as they are. I'd recommend removing them. I'm not sure what they do.
 
 ### Native token allocation
 We've done this part of the configuration [using the wizard](#airdropping-native-tokens).
@@ -858,7 +858,7 @@ interface NativeMinterInterface {
 ### Game.sol
 A simple contract I made for the sake of this tutorial.
 
-Basically, the player calls the `play` function with sending some `LUCK` tokens. The function generates a random number and by 50% chance, the player gets 2x the amount of tokens, otherwise, the tokens are stuck in the contract.
+Basically, the player calls the `play` function with sending some `LUCK` tokens. The function generates a random number and by 50% chance, the player gets 2x the amount of tokens; otherwise, the tokens are stuck in the contract.
 
 ```solidity
 pragma solidity ^0.8.7;
