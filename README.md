@@ -411,7 +411,7 @@ Maximum gas cost a block should cover. This value is set to `1,000,000` in C-Cha
 
 #### `blockGasCostStep`
 
-Determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a **slower** rate, the block gas cost will **decrease**. If the parent block is produced at a **faster** rate, the block gas cost will **increase**. The amount of change is determined by the following formula:
+This value determines the block gas change rate depending on the [`targetBlockRate`](#targetblockrate). If the parent block is produced at the `targetBlockRate`, the block gas cost will stay the same. If the parent block is produced at a **slower** rate, the block gas cost will **decrease**. If the parent block is produced at a **faster** rate, the block gas cost will **increase**. The amount of change is determined by the following formula:
 
 ```
 (blockGasCostStep) * (targetBlockRate - parent block production time)
