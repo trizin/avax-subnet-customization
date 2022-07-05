@@ -379,7 +379,7 @@ The minimum base fee that can be used by a transaction. It also shows how much g
 
 #### `targetGas`
 
-Specifies the targeted amount of gas (including block gas cost) to consume within a rolling 10s window.
+The targeted amount of gas (including block gas cost) to consume within a rolling 10s window.
 
 #### `baseFeeChangeDenominator`
 
@@ -496,7 +496,7 @@ The timestamp of the creation of the genesis block.
 Optional extra data that can be included in the genesis block. This is commonly set to `0x`.
 
 #### `gasLimit`
-This is the block gas limit. It should be set to the same value as in [the fee config](#fee-config). The value `0x7a1200` is hexadecimal and it's equal to `8,000,000`.
+The block gas limit. It should be set to the same value as in [the fee config](#fee-config). The value `0x7a1200` is hexadecimal and it's equal to `8,000,000`.
 
 #### `difficulty`
 The difficulty level applied during the nonce discovering of this block. It is usually set to `0x0` for the genesis block.
